@@ -1,8 +1,6 @@
-.idea/artifacts/*
-.idea/inspectionProfiles/*
-.idea/copyright/*
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/workspace.xml
+.idea/*
 
 .DS_Store
+
+API/obj/*
+API/bin/*
