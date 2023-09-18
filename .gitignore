@@ -2,5 +2,5 @@
 
 .DS_Store
 
-API/obj/*
-API/bin/*
+/API/obj/*
+/API/bin/*
