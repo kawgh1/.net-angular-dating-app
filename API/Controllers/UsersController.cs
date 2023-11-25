@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
-
+// Authorize means a valid JWT token is required to access these endpoints,
+// use "AllowAnonymous" for public endpoints, Authorization is set up in the Program.cs file
+[Authorize] 
 [ApiController]
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
@@ -27,6 +30,7 @@ public class UsersController : ControllerBase
         return users;
     }
     
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<ActionResult<AppUser>> GetUserById(int id)
     {

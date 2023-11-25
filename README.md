@@ -16,6 +16,27 @@ Similar `dotnet ef database update` command did not work either
 - I had to use the Plugin directly `Tools/EntityFramework/Update`
 
 
+## NuGet Packages installed
+- Entity Framework
+  - `Microsoft.EntityFrameworkCore.Design`
+- SQLite DB implementation
+  - `Microsoft.EntityFrameworkCore.Sqlite`
+- For Token Service
+  - `System.IdentityModal.Tokens.Jwt`
+- In Program.cs
+  - builder.Services.AddAuthentication(JwtBearerDefaults)
+  - `Microsoft.AspNetCore.Authentication.JwtBearer`
+    - ` builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+      .AddJwtBearer(options =>
+      options.TokenValidationParameters = new TokenValidationParameters
+      {
+      ValidateIssuerSigningKey = true,
+      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
+      ValidateIssuer = false, // for this to be, the information must be passed in the token
+      ValidateAudience = false // ""
+      });`
+
+
 - # Angular App
 
     - ## Dependencies

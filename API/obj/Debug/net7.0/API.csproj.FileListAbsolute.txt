@@ -61,3 +61,11 @@
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/runtimes/osx-arm64/native/libe_sqlite3.dylib
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
