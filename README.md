@@ -33,6 +33,9 @@ Similar `dotnet ef database update` command did not work either
       - this block of code is only needed for seeding dummy data in the database on startup
     
 
+        `
+      
+
         using var scope = app.Services.CreateScope();
         var services = scope.ServiceProvider;
         
@@ -47,6 +50,8 @@ Similar `dotnet ef database update` command did not work either
             var logger = services.GetService<ILogger<Program>>();
             logger.LogError(e, "An error occured while seeding or migrating the database");
         }
+
+        `
 
 
 ## NuGet Packages installed
