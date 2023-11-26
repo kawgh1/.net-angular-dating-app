@@ -22,6 +22,32 @@ Similar `dotnet ef database update` command did not work either
 
 ![Users in SQLite Database](https://raw.githubusercontent.com/kawgh1/.net-angular-dating-app/main/API/Users%20in%20sql%20lite%20database.png)
 
+
+- To delete a database in Entity Framework `dotnet ef database drop`
+
+## Seeding the SQLite Database
+- `Seed.cs` is a class we created that has a method `seedUsers()` which first checks if any Users already exist
+  - if Users do exist, return and do nothing
+  - otherwise, Seed the SQLite Database by reading from a specified file `Data/UserSeedData.json`
+    - in `Program.cs`
+      - `// this block of code is only needed for seeding dummy data in the database on startup
+    
+
+        using var scope = app.Services.CreateScope();
+        var services = scope.ServiceProvider;
+        
+        try
+        {
+            var context = services.GetRequiredService<DatabaseContext>();
+            await context.Database.MigrateAsync();
+            await Seed.SeedUsers(context);
+        }
+        catch (Exception e)
+        {
+            var logger = services.GetService<ILogger<Program>>();
+            logger.LogError(e, "An error occured while seeding or migrating the database");
+        }`
+
 ## NuGet Packages installed
 - Entity Framework
   - `Microsoft.EntityFrameworkCore.Design`

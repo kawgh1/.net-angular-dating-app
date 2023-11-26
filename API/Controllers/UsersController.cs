@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 // Authorize means a valid JWT token is required to access these endpoints,
-// use "AllowAnonymous" for public endpoints, Authorization is set up in the Program.cs file
+// use "AllowAnonymous" for public endpoints (default behavior), Authorization is set up in the Program.cs file
 [Authorize] 
 [ApiController]
 [Route("api/[controller]")]

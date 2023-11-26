@@ -69,3 +69,4 @@
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Data/UserSeedData.json
