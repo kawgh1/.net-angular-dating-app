@@ -64,18 +64,18 @@ Similar `dotnet ef database update` command did not work either
        
         
         
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
+              builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+              .AddJwtBearer(options =>
       
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-        ValidateIssuer = false, // for this to be, the information must be passed in the token
-        ValidateAudience = false // ""
-
-        });
+              options.TokenValidationParameters = new TokenValidationParameters
+              {
+            
+              ValidateIssuerSigningKey = true,
+              IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
+              ValidateIssuer = false, // for this to be, the information must be passed in the token
+              ValidateAudience = false // ""
+      
+              });
 
 
 - # Angular App
