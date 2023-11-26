@@ -30,28 +30,25 @@ Similar `dotnet ef database update` command did not work either
   - if Users do exist, return and do nothing
   - otherwise, Seed the SQLite Database by reading from a specified file `Data/UserSeedData.json`
     - in `Program.cs`
-      - this block of code is only needed for seeding dummy data in the database on startup
-    
-
-        `
+      - this block of code is only needed for seeding dummy data in the database on startup if none exists `
       
 
-        using var scope = app.Services.CreateScope();
-        var services = scope.ServiceProvider;
+                using var scope = app.Services.CreateScope();
+                var services = scope.ServiceProvider;
+                
+                try
+                {
+                    var context = services.GetRequiredService<DatabaseContext>();
+                    await context.Database.MigrateAsync();
+                    await Seed.SeedUsers(context);
+                }
+                catch (Exception e)
+                {
+                    var logger = services.GetService<ILogger<Program>>();
+                    logger.LogError(e, "An error occured while seeding or migrating the database");
+                }
         
-        try
-        {
-            var context = services.GetRequiredService<DatabaseContext>();
-            await context.Database.MigrateAsync();
-            await Seed.SeedUsers(context);
-        }
-        catch (Exception e)
-        {
-            var logger = services.GetService<ILogger<Program>>();
-            logger.LogError(e, "An error occured while seeding or migrating the database");
-        }
-
-        `
+                `
 
 
 ## NuGet Packages installed
