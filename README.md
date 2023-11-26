@@ -15,6 +15,12 @@ Similar `dotnet ef database update` command did not work either
 
 - I had to use the Plugin directly `Tools/EntityFramework/Update`
 
+## Running a new Database Migration with Entity Framework
+- `dotnet ef migrations add <arbitrary migration name>`
+  - ex. `dotnet ef migrations add ExtendedUserEntity`
+- After reviewing the generated migration, if it all looks good, then run `dotnet ef database update` to apply the changes
+
+![Users in SQLite Database](https://raw.githubusercontent.com/kawgh1/.net-angular-dating-app/main/API/Users%20in%20sql%20lite%20database.png)
 
 ## NuGet Packages installed
 - Entity Framework
