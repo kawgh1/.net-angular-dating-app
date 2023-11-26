@@ -30,7 +30,7 @@ Similar `dotnet ef database update` command did not work either
   - if Users do exist, return and do nothing
   - otherwise, Seed the SQLite Database by reading from a specified file `Data/UserSeedData.json`
     - in `Program.cs`
-      - `// this block of code is only needed for seeding dummy data in the database on startup
+      - this block of code is only needed for seeding dummy data in the database on startup
     
 
         using var scope = app.Services.CreateScope();
@@ -46,7 +46,8 @@ Similar `dotnet ef database update` command did not work either
         {
             var logger = services.GetService<ILogger<Program>>();
             logger.LogError(e, "An error occured while seeding or migrating the database");
-        }`
+        }
+
 
 ## NuGet Packages installed
 - Entity Framework
@@ -57,16 +58,22 @@ Similar `dotnet ef database update` command did not work either
   - `System.IdentityModal.Tokens.Jwt`
 - In Program.cs
   - builder.Services.AddAuthentication(JwtBearerDefaults)
-  - `Microsoft.AspNetCore.Authentication.JwtBearer`
-    - ` builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-      .AddJwtBearer(options =>
-      options.TokenValidationParameters = new TokenValidationParameters
-      {
-      ValidateIssuerSigningKey = true,
-      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-      ValidateIssuer = false, // for this to be, the information must be passed in the token
-      ValidateAudience = false // ""
-      });`
+    - `Microsoft.AspNetCore.Authentication.JwtBearer`
+       
+        
+        
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+      
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
+        ValidateIssuer = false, // for this to be, the information must be passed in the token
+        ValidateAudience = false // ""
+
+        });
 
 
 - # Angular App
