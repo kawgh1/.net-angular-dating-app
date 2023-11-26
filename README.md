@@ -72,7 +72,7 @@ Similar `dotnet ef database update` command did not work either
             
               ValidateIssuerSigningKey = true,
               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-              ValidateIssuer = false, // for this to be, the information must be passed in the token
+              ValidateIssuer = false, // for this to be true, the information must be passed inside the token
               ValidateAudience = false // ""
       
               });
