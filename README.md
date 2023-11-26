@@ -77,6 +77,36 @@ Similar `dotnet ef database update` command did not work either
       
               });
 
+- AutoMapper
+  - `AutoMapper.Extensions.Microsoft.DependencyInjection`
+    - Object Relational Mapper (ORM) for Entity Framework 
+    
+          `
+      
+              // Here we are mapping the first photo that has isMain == true to be the MemberDTO's PhotoUrl photo
+              CreateMap<AppUser, MemberDTO>()
+                  .ForMember(member => member.PhotoUrl,
+                       options => options.MapFrom(
+                            src => src.Photos.FirstOrDefault(photo => photo.IsMain).Url));
+        
+              CreateMap<Photo, PhotoDTO>();
+          
+          `
+      - UserController
+
+                `
+      
+                    [Authorize]
+                    [HttpGet("username/{username}")]
+                    
+                    public async Task<ActionResult<MemberDTO>> GetUserByUsername(string username)
+                    {
+                        var user = await _userRepository.GetUserByUsernameAsync(username);
+                        var userToReturn = _mapper.Map<MemberDTO>(user);
+                        return userToReturn;
+                    }
+              
+                `
 
 - # Angular App
 

@@ -1,6 +1,6 @@
 [
   {
-    "UserName": "Lisa",
+    "Username": "Lisa",
     "Gender": "female",
     "DateOfBirth": "1956-07-22",
     "KnownAs": "Lisa",
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "UserName": "Karen",
+    "Username": "Karen",
     "Gender": "female",
     "DateOfBirth": "1995-10-12",
     "KnownAs": "Karen",
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "UserName": "Margo",
+    "Username": "Margo",
     "Gender": "female",
     "DateOfBirth": "1959-01-24",
     "KnownAs": "Margo",
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "UserName": "Lois",
+    "Username": "Lois",
     "Gender": "female",
     "DateOfBirth": "1988-06-22",
     "KnownAs": "Lois",
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "UserName": "Ruthie",
+    "Username": "Ruthie",
     "Gender": "female",
     "DateOfBirth": "1956-01-12",
     "KnownAs": "Ruthie",
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "UserName": "Todd",
+    "Username": "Todd",
     "Gender": "male",
     "DateOfBirth": "1950-02-07",
     "KnownAs": "Todd",
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "UserName": "Porter",
+    "Username": "Porter",
     "Gender": "male",
     "DateOfBirth": "1967-04-09",
     "KnownAs": "Porter",
@@ -133,7 +133,7 @@
     ]
   },
   {
-    "UserName": "Mayo",
+    "Username": "Mayo",
     "Gender": "male",
     "DateOfBirth": "1990-03-23",
     "KnownAs": "Mayo",
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "UserName": "Skinner",
+    "Username": "Skinner",
     "Gender": "male",
     "DateOfBirth": "1952-12-01",
     "KnownAs": "Skinner",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "UserName": "Davis",
+    "Username": "Davis",
     "Gender": "male",
     "DateOfBirth": "1978-03-20",
     "KnownAs": "Davis",

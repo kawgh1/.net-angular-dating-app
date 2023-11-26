@@ -1,3 +1,4 @@
+using System;
 using API.Data;
 using API.Interfaces;
 using API.Services;
@@ -21,6 +22,9 @@ public static class ApplicationServiceExtension
 
         // Add Services
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        // AutoMapper ORM
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         return services;
     }

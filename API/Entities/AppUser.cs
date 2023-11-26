@@ -7,7 +7,7 @@ namespace API.Entities
     public class AppUser
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
+        public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public DateOnly DateOfBirth { get; set; }
@@ -22,9 +22,10 @@ namespace API.Entities
         public string Country { get; set; }
         public List<Photo> Photos { get; set; } = new List<Photo>();
 
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        // this method is actually causing AutoMapper to require more properties from the DB than necessary
+        // public int GetAge()
+        // {
+        //     return DateOfBirth.CalculateAge();
+        // }
     }
 }

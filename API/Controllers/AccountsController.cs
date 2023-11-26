@@ -34,7 +34,7 @@ public class AccountsController : ControllerBase
         using var hmac = new HMACSHA512();
         var user = new AppUser
         {
-            UserName = registerDto.Username.ToLower(),
+            Username = registerDto.Username.ToLower(),
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)), // returns a Byte Array
             PasswordSalt = hmac.Key
         };
@@ -43,7 +43,7 @@ public class AccountsController : ControllerBase
         await _context.SaveChangesAsync();
         return new UserDTO
         {
-            Username = user.UserName,
+            Username = user.Username,
             Token = _tokenService.CreateToken(user)
         };
     }
@@ -51,7 +51,7 @@ public class AccountsController : ControllerBase
     [HttpPost("login")] // POST: api/accounts/login
     public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDto)
     {
-        var user = await _context.Users.SingleOrDefaultAsync(user => user.UserName == loginDto.Username.ToLower());
+        var user = await _context.Users.SingleOrDefaultAsync(user => user.Username == loginDto.Username.ToLower());
 
         if (user == null)
         {
@@ -68,7 +68,7 @@ public class AccountsController : ControllerBase
 
         return new UserDTO
         {
-            Username = user.UserName,
+            Username = user.Username,
             Token = _tokenService.CreateToken(user)
         };
 
@@ -76,6 +76,6 @@ public class AccountsController : ControllerBase
 
     private async Task<bool> UserExists(string username)
     {
-        return await _context.Users.AnyAsync(user => user.UserName == username.ToLower());
+        return await _context.Users.AnyAsync(user => user.Username == username.ToLower());
     }
 }
