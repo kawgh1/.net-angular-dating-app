@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using API.Data;
 using API.DTO;
@@ -49,5 +50,21 @@ public class UsersController : ControllerBase
     public async Task<ActionResult<MemberDTO>> GetUserByUsername(string username)
     {
         return await _userRepository.GetMemberAsync(username);
+    }
+
+    [Authorize]
+    [HttpPut]
+    public async Task<ActionResult> UpdateUser(MemberUpdateDTO memberUpdateDto)
+    {
+        var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var user = await _userRepository.GetUserByUsernameAsync(username);
+
+        if (user == null) return NotFound();
+
+        _mapper.Map(memberUpdateDto, user);
+
+        if (await _userRepository.SaveAllAsync()) return NoContent();
+
+        return BadRequest("Bad Request - No changes or failed to update user");
     }
 }

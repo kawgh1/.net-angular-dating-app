@@ -108,6 +108,17 @@ Similar `dotnet ef database update` command did not work either
               
                 `
 
+## User Photo Management with Cloudinary
+- Cloudinary is used to handle photo upload, editing, etc. cloudinary.com
+- //Add `CloudinaryDotNet` using Nuget Package Manager or if using Package Manager Console:
+  Install-Package CloudinaryDotNet
+- Account account = new Account(
+  "asdffeeag",
+  "245234523453dsfgf",
+  "***************************");
+
+Cloudinary cloudinary = new Cloudinary(account);
+
 - # Angular App
 
     - ## Dependencies
