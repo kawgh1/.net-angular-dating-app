@@ -119,6 +119,27 @@ Similar `dotnet ef database update` command did not work either
 
 Cloudinary cloudinary = new Cloudinary(account);
 
+## API/appsettings.json
+
+    `
+    {
+    "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+      }
+    },
+    "AllowedHosts": "*",
+    "CloudinarySettings": {
+      "CloudName": "asdfasdf",
+      "ApiKey": "1234213423",
+      "ApiSecret": "asdf9s988f8d8-FFdweg-8"
+      }
+    }
+    
+    `
+
 - # Angular App
 
     - ## Dependencies
