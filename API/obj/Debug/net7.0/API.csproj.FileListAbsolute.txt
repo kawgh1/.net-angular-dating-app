@@ -72,3 +72,5 @@
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Data/UserSeedData.json
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/AutoMapper.dll
 /Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/CloudinaryDotNet.dll
+/Users/j/Desktop/DatingApp/API/bin/Debug/net7.0/Newtonsoft.Json.dll

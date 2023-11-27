@@ -1,5 +1,6 @@
 using System;
 using API.Data;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ public static class ApplicationServiceExtension
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
     {
+        // DB Connection
         services.AddDbContext<DatabaseContext>(opt =>
         {
             opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
@@ -25,6 +27,10 @@ public static class ApplicationServiceExtension
         services.AddScoped<IUserRepository, UserRepository>();
         // AutoMapper ORM
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        // Cloudinary
+        services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+        // Photo Service using Cloudinary
+        services.AddScoped<IPhotoService, PhotoService>();
 
         return services;
     }
