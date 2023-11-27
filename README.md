@@ -107,6 +107,8 @@ Similar `dotnet ef database update` command did not work either
                     }
               
                 `
+  - Cloudinary
+    - `CloudinaryDotNet`
 
 ## User Photo Management with Cloudinary
 - Cloudinary is used to handle photo upload, editing, etc. cloudinary.com
