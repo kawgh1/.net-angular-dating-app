@@ -140,6 +140,9 @@ Cloudinary cloudinary = new Cloudinary(account);
     
     `
 
+## Successful Cloudinary Image Upload using Dating App API `PhotoService.cs`
+![image-upload-to-cloudinary](https://raw.githubusercontent.com/kawgh1/.net-angular-dating-app/main/API/successful-cloudinary-image-upload.png)
+
 - # Angular App
 
     - ## Dependencies
